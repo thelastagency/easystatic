@@ -1,0 +1,52 @@
+<div class="mdl-layout-icon"></div>
+<header class="mdl-layout__header">
+  <div class="mdl-layout__header-row">
+    <a class="mdl-layout-title l-title" href="/">Easystatic</a>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="/getting-started">Docs</a>
+      <a class="mdl-navigation__link" href="/faq">FAQ</a>
+    </nav>
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+      <label class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-exp">
+        <i class="material-icons">search</i>
+      </label>
+      <div class="mdl-textfield__expandable-holder">
+        <input class="mdl-textfield__input" type="text" name="sample" id="fixed-header-drawer-exp">
+      </div>
+    </div>
+  </div>
+  <div class="mdl-layout__header-row l-indent l-hero max-width">
+    <div class="l-hero-left">
+      <h1 class="l-hero-title">Static site generator</h1>
+      <p class="l-hero-desc">The easiest way to build a static website for your project.</p>
+      <pre class="l-hero-code"><em>$</em> npm install -g easystatic<br><em>$</em> es start &lt;path&gt<span class="blinking-cursor">|</span></pre>
+      <p>
+        <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="/getting-started">
+          Getting Started
+        </a>
+        <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" href="https://github.com/easystatic/easystatic">
+          <i class="material-icons">link</i>
+          View on GitHub
+        </a>
+      </p>
+    </div>
+    <div class="l-hero-right">
+      <%- include('header-image') %>
+    </div>
+  </div>
+  <div class="mdl-layout__header-row l-indent layout_header-row--highlight">
+    <div class="l-container">
+     <div style="float:right">Join <a href="https://gitter.im/easystatic/easystatic">#easystatic</a> chat room on Gitter to stay up to date</div>
+     <div>2016-03-18 | v0.0.8</div>
+    </div>
+  </div>
+</header>
+<div class="mdl-layout__drawer">
+  <span class="mdl-layout__title">Easystatic</span>
+  <nav class="mdl-navigation">
+    <a class="mdl-navigation__link" href="/">Home</a>
+    <a class="mdl-navigation__link" href="/getting-started">Docs</a>
+    <a class="mdl-navigation__link" href="/faq">FAQ</a>
+  </nav>
+</div>

@@ -43,16 +43,19 @@ function start({ baseDir, assetsDir }) {
         }
       },
     },
-    files: [
-      path.join(assetsDir, '**/*.css'),
-    ],
+    files: [{
+      match: path.resolve(baseDir, path.join(assetsDir, '**/*.css')),
+      fn(event, file) {
+        this.reload('main.css');
+      }
+    }],
     plugins: [
       {
         module: 'bs-html-injector',
         options: {
           files: [
-            path.join(baseDir, '**/*.md'),
-            path.join(baseDir, '**/*.ejs'),
+            path.resolve(baseDir, '**/*.md'),
+            path.resolve(baseDir, '**/*.ejs'),
           ],
         },
       },

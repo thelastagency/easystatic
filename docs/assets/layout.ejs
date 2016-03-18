@@ -8,60 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Roboto:300,400,500,700">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.1.2/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.blue-orange.min.css">
     <link rel="stylesheet" href="/main.css">
-    <script defer src="https://code.getmdl.io/1.1.2/material.min.js"></script>
+    <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
   </head>
   <body>
     <div class="mdl-layout__container">
       <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-        <div class="mdl-layout-icon"></div>
-        <header class="mdl-layout__header">
-          <div class="mdl-layout__header-row">
-            <a class="mdl-layout-title l-title" href="/">Easystatic</a>
-            <nav class="mdl-navigation">
-              <a class="mdl-navigation__link" href="/getting-started">Docs</a>
-              <a class="mdl-navigation__link" href="/faq">FAQ</a>
-            </nav>
-            <div class="mdl-layout-spacer"></div>
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
-              <label class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-exp">
-                <i class="material-icons">search</i>
-              </label>
-              <div class="mdl-textfield__expandable-holder">
-                <input class="mdl-textfield__input" type="text" name="sample" id="fixed-header-drawer-exp">
-              </div>
-            </div>
-          </div>
-          <div class="mdl-layout__header-row l-header-hero">
-            <h1 class="hero-text">The easiest way to build a static website for your project.</h1>
-            <pre class="hero-code">&gt; npm install -g easystatic<br>&gt; es start &lt;path&gt<span class="blinking-cursor">|</span></pre>
-          </div>
-        </header>
-        <div class="mdl-layout__drawer">
-          <span class="mdl-layout__title">Easystatic</span>
-          <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" href="/">Home</a>
-            <a class="mdl-navigation__link" href="/getting-started">Docs</a>
-            <a class="mdl-navigation__link" href="/faq">FAQ</a>
-          </nav>
-        </div>
+        <%- include('header') %>
         <main class="mdl-layout__content">
-          <div class="mdl-grid max-width">
+          <div class="l-indent max-width" style="margin: 0 auto">
             <%- content %>
           </div>
-          <footer class="mdl-mini-footer">
-            <div class="mdl-grid max-width">
-              <div class="mdl-mini-footer__left-section">
-                <div class="mdl-logo">&copy; Easystatic</div>
-              </div>
-              <div class="mdl-mini-footer__right-section">
-                <ul class="mdl-mini-footer__link-list">
-                  <li>Maintained by <a href="https://twitter.com/koistya">@koistya</a> with help from <a href="https://github.com/easystatic/easystatic/graphs/contributors">contributors</a></li>
-                </ul>
-              </div>
-            </div>
-          </footer>
+          <%- include('footer') %>
         </main>
       </div>
     </div>

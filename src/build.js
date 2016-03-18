@@ -15,7 +15,7 @@ import compile from './compile';
 
 const log = debug('easystatic:build');
 
-async function build({ baseDir, buildDir, assetsDir }) {
+async function build({ baseDir, buildDir, assetsDir, production }) {
   log(`build({ baseDir: '${baseDir}' })`);
   log('remove', path.resolve(baseDir, buildDir));
   await fs.removeDir(path.resolve(baseDir, buildDir));
@@ -35,7 +35,7 @@ async function build({ baseDir, buildDir, assetsDir }) {
       reject(err);
     }
   })));
-  const css = await compile.css('/main.css', { baseDir, assetsDir });
+  const css = await compile.css('/main.css', { baseDir, assetsDir, production });
   await fs.writeFile(path.resolve(baseDir, path.join(buildDir, 'main.css')), css, 'utf-8');
 }
 

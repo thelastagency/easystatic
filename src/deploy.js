@@ -23,7 +23,7 @@ async function deploy({ baseDir, buildDir, assetsDir, repo, domain }) {
   repo: '${repo}',
   domain: '${domain}'
 })`);
-  await build({ baseDir, buildDir, assetsDir });
+  await build({ baseDir, buildDir, assetsDir, production: true });
 
   if (domain) {
     const cnameFile = path.resolve(baseDir, path.join(buildDir, './CNAME'));

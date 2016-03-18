@@ -1,0 +1,91 @@
+.l-hero {
+  display: flex;
+  width: 100%;
+  align-self: center;
+  text-align: center;
+  height: auto;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.l-hero-left,
+.l-hero-right {
+
+}
+
+.l-hero-left {
+  width: 60%;
+  text-align: left;
+  align-self: flex-start;
+}
+
+.l-hero-right {
+  width: 40%;
+  align-self: flex-end;
+}
+
+.layout_header-row--highlight {
+  background-color: rgba(0, 0, 0, .1);
+  padding: 0 40px;
+  justify-content: center;
+}
+
+.layout_header-row--highlight a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.l-hero-title {
+  font-size: 32px;
+  font-weight: 300;
+}
+
+.l-hero-desc {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.l-hero-code {
+  display: inline-block;
+  text-align: left;
+  padding: 1em 2em 1em 1em;
+  background-color: rgba(255, 255, 255, .1);
+  font-size: 18px;
+}
+
+.l-hero-code em {
+  font-style: normal;
+  color: #ff5964;
+}
+
+.l-hero-image {
+  width: auto;
+  height: auto;
+}
+
+.blinking-cursor {
+  font-weight: 100;
+  color: #fff;
+  animation: 1s blink step-end infinite;
+}
+
+@keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .l-hero {
+    flex-direction: column;
+  }
+
+  .l-hero-left,
+  .l-hero-right {
+    align-self: center;
+    max-width: 400px;
+  }
+}
