@@ -27,21 +27,24 @@ const postcss = new Postcss([postcssImport, autoprefixer, cssnano]);
 async function md(file, { baseDir, assetsDir }) {
   log(`compile.md('${file}', { baseDir: '${baseDir}', assetsDir: '${assetsDir}' })`);
   const source = await fs.readFile(path.resolve(file), 'utf-8');
-  const layoutFile = path.resolve(baseDir, path.join(assetsDir, 'layout.ejs'));
+  const layoutFile = path.resolve(baseDir, path.join(assetsDir, 'main.ejs'));
   const layout = await fs.readFile(layoutFile, 'utf-8');
   const fmContent = fm(source);
   const content = markdown.render(fmContent.body);
+  fmContent.attributes.id = fmContent.attributes.id || '';
+  fmContent.attributes.title = fmContent.attributes.title || '';
+  fmContent.attributes.description = fmContent.attributes.description || '';
   return ejs.render(layout, { ...fmContent.attributes, content, filename: layoutFile });
 }
 
-async function css(pathname, { baseDir, assetsDir }) {
-  log(`compile.css('${pathname}', { baseDir: '${baseDir}', assetsDir: '${assetsDir}' })`);
+async function css(pathname, { baseDir, assetsDir, production }) {
+  log(`compile.css('${pathname}', { baseDir: '${baseDir}', assetsDir: '${assetsDir}', production: ${production} })`);
   const filename = path.resolve(baseDir, path.join(assetsDir, pathname));
   const source = await fs.readFile(filename, 'utf-8');
   return await postcss.process(source, {
     from: filename.substr(path.resolve(process.cwd()).length + 1),
     to: pathname,
-    map: { inline: true },
+    map: production === true ? false : { inline: true },
   });
 }
 

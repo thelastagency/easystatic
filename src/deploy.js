@@ -33,7 +33,7 @@ async function deploy({ baseDir, buildDir, assetsDir, repo, domain }) {
 
   log(`git push to https://github.com/${repo}.git`);
   const git = await Repo.open(path.resolve(baseDir, buildDir), { init: true });
-  git.setRemote('origin', `https://${process.env.GH_TOKEN ? `${process.env.GH_TOKEN}@` : ''}github.com/${repo}.git`);
+  git.setRemote('origin', `https://${process.env.GITHUB_TOKEN ? `${process.env.GITHUB_TOKEN}@` : ''}github.com/${repo}.git`);
   await git.add('--all .');
   await git.commit('Initial commit');
   await git.push('origin', repo.endsWith('.io') ? 'master' : 'gh-pages', { force: true });

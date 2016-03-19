@@ -1,5 +1,3 @@
+.travis.yml
 docs
 src
-.travis.yml
-LICENSE.txt
-README.md

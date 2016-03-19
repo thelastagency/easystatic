@@ -11,14 +11,18 @@ import debug from 'debug';
 import path from 'path';
 import glob from 'globby';
 import fs from './fs';
+import scaffold from './scaffold';
 import compile from './compile';
 
 const log = debug('easystatic:build');
 
 async function build({ baseDir, buildDir, assetsDir, production }) {
   log(`build({ baseDir: '${baseDir}' })`);
+  await scaffold({ baseDir, assetsDir });
+
   log('remove', path.resolve(baseDir, buildDir));
   await fs.removeDir(path.resolve(baseDir, buildDir));
+
   const files = await glob([`${baseDir}/**/*.md`, `!${buildDir}`, `!${assetsDir}`]);
   await Promise.all(files.map(file => new Promise(async (resolve, reject) => {
     try {

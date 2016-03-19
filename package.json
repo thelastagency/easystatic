@@ -1,6 +1,6 @@
 {
   "name": "easystatic",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "description": "A simple static site generator",
   "homepage": "https://easystatic.com",
   "author": "Konstantin Tarkus <hello@tarkus.me> (http://tarkus.me/)",
@@ -32,7 +32,8 @@
   },
   "files": [
     "bin",
-    "lib"
+    "lib",
+    "template"
   ],
   "engines": ">= 5.0",
   "babel": {
@@ -49,6 +50,7 @@
     "autoprefixer": "^6.3.3",
     "browser-sync": "^2.11.1",
     "bs-html-injector": "^3.0.0",
+    "cp-file": "^3.1.0",
     "cssnano": "^3.5.2",
     "debug": "^2.2.0",
     "ejs": "^2.4.1",
@@ -75,6 +77,8 @@
     "lint": "eslint src",
     "test": "eslint src",
     "start": "babel-node ./src/easystatic.js start docs",
+    "demo": "babel-node ./src/easystatic.js start demo",
+    "demo:build": "babel-node ./src/easystatic.js build demo",
     "docs": "babel-node ./src/easystatic.js start docs",
     "docs:build": "babel-node ./src/easystatic.js build docs",
     "docs:deploy": "babel-node ./src/easystatic.js deploy docs --repo=easystatic/easystatic.github.io --domain=easystatic.com",
