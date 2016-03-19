@@ -14,5 +14,5 @@ All notable changes to this project will be documented in this file.
 - Add [CHANGELOG.md](CHANGELOG.md) file with notable changes to this project
 - Add [CONTRIBUTING.md](CONTRIBUTING.md) file with instructions on how to contribute to this project
 
-[unreleased]: https://github.com/kriasoft/react-starter-kit/compare/v0.1.0...HEAD
-[v0.1.0]: https://github.com/kriasoft/react-starter-kit/compare/v0.0.8...v0.1.0
+[unreleased]: https://github.com/easystatic/easystatic/compare/v0.1.0...HEAD
+[v0.1.0]: https://github.com/easystatic/easystatic/compare/v0.0.8...v0.1.0
