@@ -11,9 +11,10 @@ import path from 'path';
 import { parse as parseUrl } from 'url';
 import scaffold from './scaffold';
 import compile from './compile';
+import info from './info';
 
 function start({ baseDir, assetsDir }) {
-  scaffold({ baseDir, assetsDir }).then(() => {
+  scaffold({ baseDir, assetsDir }).then(() => info({ baseDir})).then((data) => {
     const bs = require('browser-sync').create();
 
     bs.init({
@@ -34,7 +35,7 @@ function start({ baseDir, assetsDir }) {
           } else if (req.headers.accept.split(',').some(x => x === 'text/html')) {
             try {
               const filename = path.join(baseDir, `${pathname}.md`);
-              const contents = await compile.md(filename, { baseDir, assetsDir });
+              const contents = await compile.md(filename, { baseDir, assetsDir, data });
               res.writeHead(200, { 'Content-Type': 'text/html' });
               res.end(contents, 'utf-8');
             } catch (err) {

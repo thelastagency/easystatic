@@ -24,7 +24,7 @@ const markdown = new Markdown({
 });
 const postcss = new Postcss([postcssImport, autoprefixer, cssnano]);
 
-async function md(file, { baseDir, assetsDir }) {
+async function md(file, { baseDir, assetsDir, data }) {
   log(`compile.md('${file}', { baseDir: '${baseDir}', assetsDir: '${assetsDir}' })`);
   const source = await fs.readFile(path.resolve(file), 'utf-8');
   const layoutFile = path.resolve(baseDir, path.join(assetsDir, 'main.ejs'));
@@ -34,7 +34,7 @@ async function md(file, { baseDir, assetsDir }) {
   fmContent.attributes.id = fmContent.attributes.id || '';
   fmContent.attributes.title = fmContent.attributes.title || '';
   fmContent.attributes.description = fmContent.attributes.description || '';
-  return ejs.render(layout, { ...fmContent.attributes, content, filename: layoutFile });
+  return ejs.render(layout, { ...data, ...fmContent.attributes, content, filename: layoutFile });
 }
 
 async function css(pathname, { baseDir, assetsDir, production }) {

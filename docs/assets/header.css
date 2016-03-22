@@ -78,6 +78,26 @@
   animation: 1s blink step-end infinite;
 }
 
+.header__gh-link {
+  color: rgba(255, 255, 255, .8);
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.header__gh-link:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.header__gh-link svg {
+  padding-right: 6px;
+}
+
+.header__button {
+  font-size: 16px;
+  padding: .25em 1em;
+  margin-right: 1em;
+}
+
 @keyframes blink {
   from, to {
     color: transparent;

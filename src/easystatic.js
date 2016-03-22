@@ -16,11 +16,14 @@ import { version } from '../package.json';
 
 const argv = require('minimist')(process.argv.slice(2));
 const [command, baseDir] = argv._;
-const buildDir = 'dist';
-const assetsDir = 'assets';
-const options = { baseDir, buildDir, assetsDir };
 
-const help = console.log.bind(this, `  Usage: easystatic <command> [<path>] [options]
+const options = {
+  baseDir: baseDir || './',
+  buildDir: argv.dist || 'dist',
+  assetsDir: argv.assets || 'assets',
+};
+
+const help = console.log.bind(this, `  Usage: es <command> [<path>] [options]
 
   A simple static website generator
 
@@ -37,8 +40,8 @@ const help = console.log.bind(this, `  Usage: easystatic <command> [<path>] [opt
 
   Examples:
 
-    $ easystatic start docs
-    $ easystatic deploy docs
+    $ es start docs
+    $ es deploy docs --repo=easystatic/easystatic.github.io --domain=easystatic.com
   `);
 
 if (argv.help || argv.h) {
@@ -48,7 +51,7 @@ if (argv.help || argv.h) {
 } else if (command === 'start') {
   start(options);
 } else if (command === 'build') {
-  build({ ...options, production: true }).catch(console.error);
+  build(options).catch(console.error);
 } else if (command === 'deploy') {
   deploy({
     ...options,
