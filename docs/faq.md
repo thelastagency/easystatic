@@ -1,5 +1,6 @@
 ---
-title: FAQ | Easystatic
+id: faq
+title: FAQ | Easystatic site generator
 ---
 ## FAQ
 

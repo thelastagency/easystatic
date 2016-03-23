@@ -1,5 +1,6 @@
 ---
-title: Getting Started | Easystatic
+id: getting-started
+title: Getting Started | Easystatic site generator
 ---
 ## Getting Started
 

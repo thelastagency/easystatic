@@ -2,20 +2,14 @@
 <header class="mdl-layout__header">
   <div class="mdl-layout__header-row">
     <a class="mdl-layout-title l-title" href="/">Easystatic</a>
-    <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href="/getting-started">Docs</a>
-      <a class="mdl-navigation__link" href="/faq">FAQ</a>
-    </nav>
     <div class="mdl-layout-spacer"></div>
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
-      <label class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-exp">
-        <i class="material-icons">search</i>
-      </label>
-      <div class="mdl-textfield__expandable-holder">
-        <input class="mdl-textfield__input" type="text" name="sample" id="fixed-header-drawer-exp">
-      </div>
-    </div>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="/">Overview</a>
+      <a class="mdl-navigation__link" href="/getting-started">Get Started</a>
+      <a class="mdl-navigation__link" href="/recipes">Recipes</a>
+    </nav>
   </div>
+  <% if (id === 'home') { %>
   <div class="mdl-layout__header-row l-indent l-hero max-width">
     <div class="l-hero-left">
       <h1 class="l-hero-title">Static site generator</h1>
@@ -59,6 +53,7 @@
      <div><%= npm.time[npm['dist-tags'].latest].substr(0, 10) %> &nbsp;|&nbsp; <a href="https://www.npmjs.com/package/easystatic">v<%= npm['dist-tags'].latest %></a></div>
     </div>
   </div>
+  <% } %>
 </header>
 <div class="mdl-layout__drawer">
   <span class="mdl-layout__title">Easystatic</span>

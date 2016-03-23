@@ -1,5 +1,6 @@
 ---
-title: Easystatic
+id: home
+title: Easystatic site generator
 ---
 ## Welcome!
 

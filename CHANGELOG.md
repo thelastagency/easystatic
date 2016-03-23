@@ -6,10 +6,14 @@ All notable changes to this project will be documented in this file.
 
 - Compile `main.js` file with [Babel](https://babeljs.io) and [Browserify](http://browserify.org/) (PLANNED)
 
+### [v0.1.4] - 2016-03-23
+
+- Fix Browsersync middleware in `start.js` to correctly serve index files
+
 ### [v0.1.3] - 2016-03-23
 
 - Add support of `GITHUB_USER`, `GITHUB_EMAIL`, `GITHUB_TOKEN` environment variables that may help
-  with automated deployments.
+  with automated deployments
 
 ### [v0.1.2] - 2016-03-23
 
@@ -28,7 +32,8 @@ All notable changes to this project will be documented in this file.
 - Add [CHANGELOG.md](CHANGELOG.md) file with notable changes to this project
 - Add [CONTRIBUTING.md](CONTRIBUTING.md) file with instructions on how to contribute to this project
 
-[unreleased]: https://github.com/easystatic/easystatic/compare/v0.1.3...HEAD
+[unreleased]: https://github.com/easystatic/easystatic/compare/v0.1.4...HEAD
+[v0.1.4]: https://github.com/easystatic/easystatic/compare/v0.1.3...v0.1.4
 [v0.1.3]: https://github.com/easystatic/easystatic/compare/v0.1.2...v0.1.3
 [v0.1.2]: https://github.com/easystatic/easystatic/compare/v0.1.1...v0.1.2
 [v0.1.1]: https://github.com/easystatic/easystatic/compare/v0.1.0...v0.1.1

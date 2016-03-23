@@ -39,7 +39,18 @@ function start({ baseDir, assetsDir }) {
               res.writeHead(200, { 'Content-Type': 'text/html' });
               res.end(contents, 'utf-8');
             } catch (err) {
-              next(err);
+              if (err.code === 'ENOENT') {
+                try {
+                  const filename = path.join(baseDir, `${pathname}/index.md`);
+                  const contents = await compile.md(filename, { baseDir, assetsDir, data });
+                  res.writeHead(200, { 'Content-Type': 'text/html' });
+                  res.end(contents, 'utf-8');
+                } catch (err2) {
+                  next(err2);
+                }
+              } else {
+                next(err);
+              }
             }
           } else {
             next();
