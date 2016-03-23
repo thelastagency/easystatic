@@ -7,10 +7,12 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 
+/* eslint-disable no-console */
+
 import path from 'path';
 import https from 'https';
 import debug from 'debug';
-import defaults from './defaults.json';
+import defaults from './defaults.js';
 
 const log = debug('easystatic:info');
 
@@ -27,7 +29,8 @@ async function tryFetch(options) {
         if (res.statusCode === 200) {
           try {
             const json = JSON.parse(body);
-            return resolve(json);
+            resolve(json);
+            return;
           } catch (err) {
             log(err);
           }

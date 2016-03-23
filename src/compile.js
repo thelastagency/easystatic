@@ -38,7 +38,8 @@ async function md(file, { baseDir, assetsDir, data }) {
 }
 
 async function css(pathname, { baseDir, assetsDir, production }) {
-  log(`compile.css('${pathname}', { baseDir: '${baseDir}', assetsDir: '${assetsDir}', production: ${production} })`);
+  log(`compile.css('${pathname}', { baseDir: '${baseDir}', ` +
+      `assetsDir: '${assetsDir}', production: ${production} })`);
   const filename = path.resolve(baseDir, path.join(assetsDir, pathname));
   const source = await fs.readFile(filename, 'utf-8');
   return await postcss.process(source, {

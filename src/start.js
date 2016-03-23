@@ -14,7 +14,7 @@ import compile from './compile';
 import info from './info';
 
 function start({ baseDir, assetsDir }) {
-  scaffold({ baseDir, assetsDir }).then(() => info({ baseDir})).then((data) => {
+  scaffold({ baseDir, assetsDir }).then(() => info({ baseDir })).then((data) => {
     const bs = require('browser-sync').create();
 
     bs.init({
@@ -48,9 +48,9 @@ function start({ baseDir, assetsDir }) {
       },
       files: [{
         match: path.resolve(baseDir, path.join(assetsDir, '**/*.css')),
-        fn(event, file) {
+        fn() {
           this.reload('main.css');
-        }
+        },
       }],
       plugins: [
         {
@@ -64,7 +64,7 @@ function start({ baseDir, assetsDir }) {
         },
       ],
     });
-  }).catch(err => console.error);
+  }).catch(err => console.error(err.stack)); // eslint-disable-line no-console
 }
 
 export default start;

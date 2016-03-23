@@ -1,6 +1,6 @@
 {
   "name": "easystatic",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A simple static site generator",
   "homepage": "https://easystatic.com",
   "author": "Konstantin Tarkus <hello@tarkus.me> (http://tarkus.me/)",

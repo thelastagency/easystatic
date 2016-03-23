@@ -1,4 +1,24 @@
-{
+/**
+ * Easystatic - static site generator (https://easystatic.com)
+ *
+ * Copyright © 2016 Easystatic contributors. All rights reserved.
+ *
+ * This source code is licensed under the Apache 2.0 license found in the
+ * LICENSE.txt file in the root directory of this source tree.
+ */
+
+/* eslint-disable quotes,quote-props,comma-dangle */
+
+/**
+ * Provides default values with GitHub and NPM info taken from:
+ *
+ *   - https://api.github.com/repos/easystatic/easystatic
+ *   - https://registry.npmjs.com/easystatic
+ *
+ * This helps with testing a static site even if GitHub repository URL and NPM package name for it
+ * were not found. See info.js
+ */
+export default {
   "github": {
     "id": 53868172,
     "name": "easystatic",
@@ -182,4 +202,4 @@
     "readmeFilename": "README.md",
     "keywords": []
   }
-}
+};

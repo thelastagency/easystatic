@@ -51,14 +51,14 @@ if (argv.help || argv.h) {
 } else if (command === 'start') {
   start(options);
 } else if (command === 'build') {
-  build(options).catch(console.error);
+  build(options).catch(err => console.error(err.stack));
 } else if (command === 'deploy') {
   deploy({
     ...options,
     production: true,
     repo: argv.repo || argv.r,
     domain: argv.domain || argv.d,
-  }).catch(console.error);
+  }).catch(err => console.error(err.stack));
 } else {
   help();
 }

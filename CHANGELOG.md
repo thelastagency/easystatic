@@ -6,6 +6,11 @@ All notable changes to this project will be documented in this file.
 
 - Compile `main.js` file with [Babel](https://babeljs.io) and [Browserify](http://browserify.org/) (PLANNED)
 
+### [v0.1.2] - 2016-03-23
+
+- Fix `defaults.json` not being found
+- Fix ESLint warnings in source code
+
 ### [v0.1.1] - 2016-03-22
 
 - Add `github` and `npm` data variables that can be used inside the templates. For example: `<%= npm.name %>`
@@ -18,6 +23,7 @@ All notable changes to this project will be documented in this file.
 - Add [CHANGELOG.md](CHANGELOG.md) file with notable changes to this project
 - Add [CONTRIBUTING.md](CONTRIBUTING.md) file with instructions on how to contribute to this project
 
-[unreleased]: https://github.com/easystatic/easystatic/compare/v0.1.1...HEAD
+[unreleased]: https://github.com/easystatic/easystatic/compare/v0.1.2...HEAD
+[v0.1.2]: https://github.com/easystatic/easystatic/compare/v0.1.1...v0.1.2
 [v0.1.1]: https://github.com/easystatic/easystatic/compare/v0.1.0...v0.1.1
 [v0.1.0]: https://github.com/easystatic/easystatic/compare/v0.0.8...v0.1.0

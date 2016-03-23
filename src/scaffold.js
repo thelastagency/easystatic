@@ -55,7 +55,11 @@ async function scaffold({ baseDir, assetsDir }) {
       continue;
     }
 
-    const dest = path.resolve(assetsPath, file.substr(path.join(__dirname, '../template').length + 1));
+    const dest = path.resolve(
+      assetsPath,
+      file.substr(path.join(__dirname, '../template').length + 1)
+    );
+
     log(`Copy ${file} to ${dest}`);
     await cp(file, dest);
   }
