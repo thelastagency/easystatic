@@ -13,31 +13,61 @@ import mkdirp from 'mkdirp';
 
 function stat(path) {
   return new Promise((resolve, reject) => {
-    fs.stat(path, (err, stats) => err ? reject(err) : resolve(stats));
+    fs.stat(path, (err, stats) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(stats);
+      }
+    });
   });
 }
 
 function readFile(path, options) {
   return new Promise((resolve, reject) => {
-    fs.readFile(path, options, (err, content) => err ? reject(err) : resolve(content));
+    fs.readFile(path, options, (err, content) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(content);
+      }
+    });
   });
 }
 
 function writeFile(path, contents, options) {
   return new Promise((resolve, reject) => {
-    fs.writeFile(path, contents, options, err => err ? reject(err) : resolve());
+    fs.writeFile(path, contents, options, err => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve();
+      }
+    });
   });
 }
 
 function createDir(path) {
   return new Promise((resolve, reject) => {
-    mkdirp(path, err => err ? reject(err) : resolve());
+    mkdirp(path, err => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve();
+      }
+    });
   });
 }
 
 function removeDir(path) {
   return new Promise((resolve, reject) => {
-    rimraf(path, (err) => err ? reject(err) : resolve());
+    rimraf(path, (err) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve();
+      }
+    });
   });
 }
 
