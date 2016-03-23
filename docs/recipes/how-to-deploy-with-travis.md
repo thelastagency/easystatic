@@ -2,9 +2,9 @@
 id: how-to-deploy-with-travis
 title: How to deploy a static site to GitHub Pages with Travis CI | Easystatic
 ---
-## How to deploy a static site with Travis CI
+## How to deploy a static site to GitHub Pages with Travis
 
-This step-by-step tutorial will help you setup automated deployments of your static website to
+This step-by-step tutorial will help you to setup an automated deployment of your static website to
 **GitHub Pages** (free CDN hosting) by using [Travis CI](https://travis-ci.org/).
 
 ### Step 1: Create `.travis.yml` file

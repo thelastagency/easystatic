@@ -18,6 +18,12 @@ html > body {
   color: #fff;
 }
 
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 16px 40px 40px;
+}
+
 .l-title {
   padding-right: 24px;
 }
@@ -44,18 +50,20 @@ html > body {
   width: 100%;
 }
 
-.max-width {
+.main__content {
   max-width: 1000px;
-}
-
-.l-indent {
-  padding-left: 40px;
-  padding-right: 40px;
+  margin: 0 auto;
+  padding: 16px 40px 40px;
 }
 
 @media screen and (max-width: 1024px) {
-  .l-indent {
-    padding-left: 16px;
-    padding-right: 16px;
+
+  .container {
+    padding: 0 16px 16px;
   }
+
+  .main__content {
+    padding: 0 16px 16px;
+  }
+
 }

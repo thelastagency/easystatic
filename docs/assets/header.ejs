@@ -10,12 +10,12 @@
     </nav>
   </div>
   <% if (id === 'home') { %>
-  <div class="mdl-layout__header-row l-indent l-hero max-width">
+  <div class="container mdl-layout__header-row l-hero">
     <div class="l-hero-left">
       <h1 class="l-hero-title">Static site generator</h1>
       <p class="l-hero-desc">The easiest way to build a static website for your project. Just create a folder with markdown (.md) files in it, and let Easystatic to do its magic.</p>
       <pre class="l-hero-code"><em>$</em> npm install -g easystatic<br><em>$</em> es start &lt;path&gt<span class="blinking-cursor">|</span></pre>
-      <p>
+      <p class="header__stats">
         <a href="https://github.com/easystatic/easystatic/watchers" class="header__gh-link">
           <svg aria-hidden="true" height="16" role="img" version="1.1" viewBox="0 0 16 16" width="16"><path d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6c4.94 0 7.94-6 7.94-6S13 2 8.06 2z m-0.06 10c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4z m2-4c0 1.11-0.89 2-2 2s-2-0.89-2-2 0.89-2 2-2 2 0.89 2 2z"></path></svg>
           <%= github.subscribers_count %> watchers
@@ -47,8 +47,8 @@
       <%- include('header-image') %>
     </div>
   </div>
-  <div class="mdl-layout__header-row l-indent layout_header-row--highlight">
-    <div class="l-container">
+  <div class="mdl-layout__header-row mdl-layout__header-row--highlight">
+    <div class="header__container">
      <div style="float:right">Join <a href="https://gitter.im/easystatic/easystatic">#easystatic</a> chat room on Gitter to stay up to date</div>
      <div><%= npm.time[npm['dist-tags'].latest].substr(0, 10) %> &nbsp;|&nbsp; <a href="https://www.npmjs.com/package/easystatic">v<%= npm['dist-tags'].latest %></a></div>
     </div>
@@ -58,8 +58,8 @@
 <div class="mdl-layout__drawer">
   <span class="mdl-layout__title">Easystatic</span>
   <nav class="mdl-navigation">
-    <a class="mdl-navigation__link" href="/">Home</a>
-    <a class="mdl-navigation__link" href="/getting-started">Docs</a>
-    <a class="mdl-navigation__link" href="/faq">FAQ</a>
+    <a class="mdl-navigation__link" href="/">Overview</a>
+    <a class="mdl-navigation__link" href="/getting-started">Get Started</a>
+    <a class="mdl-navigation__link" href="/recipes">Recipes</a>
   </nav>
 </div>
