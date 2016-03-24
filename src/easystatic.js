@@ -9,10 +9,11 @@
 
 /* eslint-disable no-console */
 
+import updateNotifier from 'update-notifier';
 import start from './start';
 import build from './build';
 import deploy from './deploy';
-import { version } from '../package.json';
+import pkg from '../package.json';
 
 const argv = require('minimist')(process.argv.slice(2));
 const [command, baseDir] = argv._;
@@ -44,10 +45,13 @@ const help = console.log.bind(this, `  Usage: es <command> [<path>] [options]
     $ es deploy docs --repo=easystatic/easystatic.github.io --domain=easystatic.com
   `);
 
+// Check if a new version of Easystatic is available and print an update notification
+updateNotifier({ pkg }).notify({ defer: false });
+
 if (argv.help || argv.h) {
   help();
 } else if (argv.version || argv.v) {
-  console.log(version);
+  console.log(pkg.version);
 } else if (command === 'start') {
   start(options);
 } else if (command === 'build') {

@@ -1,7 +1,7 @@
 {
   "name": "easystatic",
-  "version": "0.1.4",
-  "description": "A simple static site generator",
+  "version": "0.1.5",
+  "description": "A simple static site generator that uses Markdown It for web pages, PostCSS and EJS for layout, Browsersync for cross-device testing..",
   "homepage": "https://easystatic.com",
   "author": "Konstantin Tarkus <hello@tarkus.me> (http://tarkus.me/)",
   "repository": "easystatic/easystatic",
@@ -24,7 +24,8 @@
     "docs",
     "markdown",
     "browsersync",
-    "web development"
+    "web development",
+    "postcss"
   ],
   "bin": {
     "es": "./bin/easystatic.js",
@@ -60,9 +61,17 @@
     "markdown-it": "^6.0.0",
     "minimist": "^1.2.0",
     "mkdirp": "^0.5.1",
+    "pixrem": "^3.0.0",
+    "pleeease-filters": "^2.0.0",
     "postcss": "^5.0.19",
+    "postcss-calc": "^5.2.0",
+    "postcss-color-function": "^2.0.1",
+    "postcss-custom-properties": "^5.0.0",
     "postcss-import": "^8.0.2",
-    "rimraf": "^2.5.2"
+    "postcss-pseudoelements": "^3.0.0",
+    "postcss-selector-not": "^2.0.0",
+    "rimraf": "^2.5.2",
+    "update-notifier": "^0.6.3"
   },
   "devDependencies": {
     "babel-cli": "^6.6.5",

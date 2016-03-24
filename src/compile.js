@@ -9,20 +9,43 @@
 
 import debug from 'debug';
 import path from 'path';
+
+/* EJS, Markdown, Front Matter */
 import ejs from 'ejs';
 import fm from 'front-matter';
 import Markdown from 'markdown-it';
+
+/* PostCSS and its plug-ins */
 import Postcss from 'postcss';
 import postcssImport from 'postcss-import';
+import postcssVars from 'postcss-custom-properties';
+import postcssCalc from 'postcss-calc';
+import postcssColor from 'postcss-color-function';
+import postcssFilter from 'pleeease-filters';
+import postcssRem from 'pixrem';
+import postcssPseudoSelectors from 'postcss-pseudoelements';
+import postcssSelectorNot from 'postcss-selector-not';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
+
 import fs from './fs';
 
 const log = debug('easystatic:compile');
 const markdown = new Markdown({
   html: true,           // Enable HTML tags in source
 });
-const postcss = new Postcss([postcssImport, autoprefixer, cssnano]);
+const postcss = new Postcss([
+  postcssImport,
+  postcssVars,
+  postcssCalc,
+  postcssColor,
+  postcssFilter,
+  postcssRem,
+  postcssPseudoSelectors,
+  postcssSelectorNot,
+  autoprefixer,
+  cssnano,
+]);
 
 async function md(file, { baseDir, assetsDir, data }) {
   log(`compile.md('${file}', { baseDir: '${baseDir}', assetsDir: '${assetsDir}' })`);

@@ -6,6 +6,21 @@ All notable changes to this project will be documented in this file.
 
 - Compile `main.js` file with [Babel](https://babeljs.io) and [Browserify](http://browserify.org/) (PLANNED)
 
+### [v0.1.5] - 2016-03-24
+
+- Integrate popular, well supported plug-ins for PostCSS:
+  [postcss-import](https://www.npmjs.com/package/postcss-import),
+  [postcss-custom-properties](https://www.npmjs.com/package/postcss-custom-properties),
+  [postcss-calc](https://www.npmjs.com/package/postcss-calc),
+  [postcss-color-function](https://www.npmjs.com/package/postcss-color-function),
+  [pleeease-filters](https://www.npmjs.com/package/pleeease-filters),
+  [pixrem](https://www.npmjs.com/package/pixrem),
+  [postcss-pseudoelements](https://www.npmjs.com/package/postcss-pseudoelements),
+  [postcss-selector-not](https://www.npmjs.com/package/postcss-selector-not),
+  [autoprefixer](https://www.npmjs.com/package/autoprefixer),
+  [cssnano](https://www.npmjs.com/package/cssnano)
+- Show a notification if a new version of Easystatic is available on NPM
+
 ### [v0.1.4] - 2016-03-23
 
 - Fix Browsersync middleware in `start.js` to correctly serve index files
@@ -32,7 +47,8 @@ All notable changes to this project will be documented in this file.
 - Add [CHANGELOG.md](CHANGELOG.md) file with notable changes to this project
 - Add [CONTRIBUTING.md](CONTRIBUTING.md) file with instructions on how to contribute to this project
 
-[unreleased]: https://github.com/easystatic/easystatic/compare/v0.1.4...HEAD
+[unreleased]: https://github.com/easystatic/easystatic/compare/v0.1.5...HEAD
+[v0.1.5]: https://github.com/easystatic/easystatic/compare/v0.1.4...v0.1.5
 [v0.1.4]: https://github.com/easystatic/easystatic/compare/v0.1.3...v0.1.4
 [v0.1.3]: https://github.com/easystatic/easystatic/compare/v0.1.2...v0.1.3
 [v0.1.2]: https://github.com/easystatic/easystatic/compare/v0.1.1...v0.1.2

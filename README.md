@@ -4,7 +4,7 @@
 > for web pages, [EJS](http://ejs.co/) and [Postcss](http://postcss.org/) for site layout, [Browsersync](https://browsersync.io/)
 > as a development server, allowing "live editing" and testing the site on all connected-devices.
 
-For more information visit https://easystatic.com
+For more information visit **[Easystatic.com](https://easystatic.com)** | Send feedback to [hello@tarkus.me](mailto:hello@tarkus.me) | Join [#easystatic](https://gitter.im/easystatic/easystatic) on Gitter to stay up to date
 
 ### Documentation
 
