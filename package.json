@@ -1,6 +1,6 @@
 {
   "name": "easystatic",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "A simple static site generator that uses Markdown It for web pages, PostCSS and EJS for layout, Browsersync for cross-device testing..",
   "homepage": "https://easystatic.com",
   "author": "Konstantin Tarkus <hello@tarkus.me> (http://tarkus.me/)",
@@ -49,6 +49,7 @@
   },
   "dependencies": {
     "autoprefixer": "^6.3.3",
+    "babel-polyfill": "^6.7.4",
     "browser-sync": "^2.11.1",
     "bs-html-injector": "^3.0.0",
     "cp-file": "^3.1.0",
