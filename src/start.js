@@ -33,13 +33,14 @@ function start({ baseDir, assetsDir }) {
             }
           } else if (req.headers.accept.split(',').some(x => x === 'text/html')) {
             try {
+              const base = '';
               const pathname = `${url.pathname === '/' ? 'index' : url.pathname}.md`;
               const filename = path.join(baseDir, pathname);
               const contents = await compile.md(filename, {
                 baseDir,
                 assetsDir,
                 production: false,
-                data: { ...data, path: url.pathname }, // data variables for EJS template(s)
+                data: { ...data, base, path: url.pathname }, // data variables for EJS template(s)
               });
               res.writeHead(200, { 'Content-Type': 'text/html' });
               res.end(contents, 'utf-8');

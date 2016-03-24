@@ -21,7 +21,7 @@ const log = debug('easystatic:build');
 /**
  * Builds a distributable version of the static site from source files.
  */
-async function build({ baseDir, buildDir, assetsDir, production }) {
+async function build({ baseDir, buildDir, assetsDir, base, production }) {
   log(`build({ baseDir: '${baseDir}' })`);
   await scaffold({ baseDir, assetsDir });
 
@@ -53,7 +53,7 @@ async function build({ baseDir, buildDir, assetsDir, production }) {
         baseDir,
         assetsDir,
         production,
-        data: { ...data, path: pathname, file }, // data variables for EJS template(s)
+        data: { ...data, base, path: pathname, file }, // data variables for EJS template(s)
       });
       // Resolve the output filename:
       //   - /index.md       -> /dist/index.html

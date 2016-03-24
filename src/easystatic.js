@@ -22,7 +22,13 @@ const options = {
   baseDir: baseDir || './',
   buildDir: argv.dist || 'dist',
   assetsDir: argv.assets || 'assets',
+  base: argv.base || '',
 };
+
+// The base URL defaults to <project> resolved from --repo=<username>/<project>
+if (argv.repo && !argv.domain && !argv.base) {
+  options.base = argv.repo.match(/\/[^\/]*$/i)[0] || '';
+}
 
 const help = console.log.bind(this, `  Usage: es <command> [<path>] [options]
 
@@ -55,7 +61,10 @@ if (argv.help || argv.h) {
 } else if (command === 'start') {
   start(options);
 } else if (command === 'build') {
-  build(options).catch(err => console.error(err.stack));
+  build({
+    ...options,
+    production: true,
+  }).catch(err => console.error(err.stack));
 } else if (command === 'deploy') {
   deploy({
     ...options,
