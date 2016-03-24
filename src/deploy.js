@@ -57,7 +57,7 @@ async function deploy({ baseDir, buildDir, assetsDir, repo, domain }) {
   await git.commit('Initial commit');
 
   try {
-    await git.push('origin', repo.endsWith('.io') ? 'master' : 'gh-pages', { force: true });
+    await git.push('origin', repo.endsWith('.io') ? 'master' : 'master:gh-pages', { force: true });
   } catch (err) {
     throw new Error(
       `Failed to push the contents of the ${path.resolve(baseDir, buildDir)} ` +

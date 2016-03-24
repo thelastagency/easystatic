@@ -6,6 +6,10 @@ All notable changes to this project will be documented in this file.
 
 - Compile `main.js` file with [Babel](https://babeljs.io) and [Browserify](http://browserify.org/) (PLANNED)
 
+### [v0.1.8] - 2016-03-24
+
+- Fix deployment script not being able to push `dist` folder to `gh-pages` branch
+
 ### [v0.1.7] - 2016-03-24
 
 - Add `core-js` polyfill to avoid potential compatibility issues with different Node.js versions 
@@ -59,7 +63,8 @@ All notable changes to this project will be documented in this file.
 - Add [CHANGELOG.md](CHANGELOG.md) file with notable changes to this project
 - Add [CONTRIBUTING.md](CONTRIBUTING.md) file with instructions on how to contribute to this project
 
-[unreleased]: https://github.com/easystatic/easystatic/compare/v0.1.7...HEAD
+[unreleased]: https://github.com/easystatic/easystatic/compare/v0.1.8...HEAD
+[v0.1.8]: https://github.com/easystatic/easystatic/compare/v0.1.7...v0.1.8
 [v0.1.7]: https://github.com/easystatic/easystatic/compare/v0.1.6...v0.1.7
 [v0.1.6]: https://github.com/easystatic/easystatic/compare/v0.1.5...v0.1.6
 [v0.1.5]: https://github.com/easystatic/easystatic/compare/v0.1.4...v0.1.5
