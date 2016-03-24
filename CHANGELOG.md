@@ -6,6 +6,14 @@ All notable changes to this project will be documented in this file.
 
 - Compile `main.js` file with [Babel](https://babeljs.io) and [Browserify](http://browserify.org/) (PLANNED)
 
+### [v0.1.6] - 2016-03-24
+
+- Add `path` and `file` data variables to be used in EJS template(s). For example, for a URL like
+  [easystatic.com/recipes](https://easystatic.com/recipes), the `path` variable will be set to
+  `/recipes`, and `file` will be set to `recipes/index.md`.
+- Add support of arbitrary static files from the `assets` folder (images, icons etc.)
+- Fix index files being not correctly resolved
+
 ### [v0.1.5] - 2016-03-24
 
 - Integrate popular, well supported plug-ins for PostCSS:
@@ -47,7 +55,8 @@ All notable changes to this project will be documented in this file.
 - Add [CHANGELOG.md](CHANGELOG.md) file with notable changes to this project
 - Add [CONTRIBUTING.md](CONTRIBUTING.md) file with instructions on how to contribute to this project
 
-[unreleased]: https://github.com/easystatic/easystatic/compare/v0.1.5...HEAD
+[unreleased]: https://github.com/easystatic/easystatic/compare/v0.1.6...HEAD
+[v0.1.6]: https://github.com/easystatic/easystatic/compare/v0.1.5...v0.1.6
 [v0.1.5]: https://github.com/easystatic/easystatic/compare/v0.1.4...v0.1.5
 [v0.1.4]: https://github.com/easystatic/easystatic/compare/v0.1.3...v0.1.4
 [v0.1.3]: https://github.com/easystatic/easystatic/compare/v0.1.2...v0.1.3

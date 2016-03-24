@@ -19,14 +19,13 @@ function start({ baseDir, assetsDir }) {
 
     bs.init({
       server: {
-        baseDir,
+        baseDir: [baseDir, path.join(baseDir, assetsDir)],
         async middleware(req, res, next) {
           const url = parseUrl(req.url);
-          const pathname = url.pathname === '/' ? '/index' : url.pathname;
 
-          if (pathname.match(/\.css$/)) {
+          if (url.pathname.match(/\.css$/)) {
             try {
-              const result = await compile.css(pathname, { baseDir, assetsDir });
+              const result = await compile.css(url.pathname, { baseDir, assetsDir });
               res.setHeader('Content-Type', 'text/css');
               res.end(result.css, 'utf-8');
             } catch (err) {
@@ -34,23 +33,18 @@ function start({ baseDir, assetsDir }) {
             }
           } else if (req.headers.accept.split(',').some(x => x === 'text/html')) {
             try {
-              const filename = path.join(baseDir, `${pathname}.md`);
-              const contents = await compile.md(filename, { baseDir, assetsDir, data });
+              const pathname = `${url.pathname === '/' ? 'index' : url.pathname}.md`;
+              const filename = path.join(baseDir, pathname);
+              const contents = await compile.md(filename, {
+                baseDir,
+                assetsDir,
+                production: false,
+                data: { ...data, path: url.pathname }, // data variables for EJS template(s)
+              });
               res.writeHead(200, { 'Content-Type': 'text/html' });
               res.end(contents, 'utf-8');
             } catch (err) {
-              if (err.code === 'ENOENT') {
-                try {
-                  const filename = path.join(baseDir, `${pathname}/index.md`);
-                  const contents = await compile.md(filename, { baseDir, assetsDir, data });
-                  res.writeHead(200, { 'Content-Type': 'text/html' });
-                  res.end(contents, 'utf-8');
-                } catch (err2) {
-                  next(err2);
-                }
-              } else {
-                next(err);
-              }
+              next(err);
             }
           } else {
             next();

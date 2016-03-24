@@ -47,9 +47,20 @@ const postcss = new Postcss([
   cssnano,
 ]);
 
-async function md(file, { baseDir, assetsDir, data }) {
+async function md(file, { baseDir, assetsDir, data, production }) {
   log(`compile.md('${file}', { baseDir: '${baseDir}', assetsDir: '${assetsDir}' })`);
-  const source = await fs.readFile(path.resolve(file), 'utf-8');
+  let source;
+  let filename = file;
+  try {
+    source = await fs.readFile(path.resolve(filename), 'utf-8');
+  } catch (err) {
+    if (err.code === 'ENOENT' && !file.endsWith('index.md')) {
+      filename = `${file.substr(0, file.length - 3)}/index.md`;
+      source = await fs.readFile(path.resolve(filename), 'utf-8');
+    } else {
+      throw err;
+    }
+  }
   const layoutFile = path.resolve(baseDir, path.join(assetsDir, 'main.ejs'));
   const layout = await fs.readFile(layoutFile, 'utf-8');
   const fmContent = fm(source);
@@ -57,7 +68,14 @@ async function md(file, { baseDir, assetsDir, data }) {
   fmContent.attributes.id = fmContent.attributes.id || '';
   fmContent.attributes.title = fmContent.attributes.title || '';
   fmContent.attributes.description = fmContent.attributes.description || '';
-  return ejs.render(layout, { ...data, ...fmContent.attributes, content, filename: layoutFile });
+  return ejs.render(layout, {
+    ...data,
+    ...fmContent.attributes,
+    content,
+    production,
+    file: filename.replace(/\\/g, '/'),
+    filename: layoutFile,
+  });
 }
 
 async function css(pathname, { baseDir, assetsDir, production }) {
@@ -67,7 +85,7 @@ async function css(pathname, { baseDir, assetsDir, production }) {
   const source = await fs.readFile(filename, 'utf-8');
   return await postcss.process(source, {
     from: filename.substr(path.resolve(process.cwd()).length + 1),
-    to: pathname,
+    to: pathname.substr(1),
     map: production === true ? false : { inline: true },
   });
 }

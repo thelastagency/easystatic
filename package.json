@@ -1,6 +1,6 @@
 {
   "name": "easystatic",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A simple static site generator that uses Markdown It for web pages, PostCSS and EJS for layout, Browsersync for cross-device testing..",
   "homepage": "https://easystatic.com",
   "author": "Konstantin Tarkus <hello@tarkus.me> (http://tarkus.me/)",
