@@ -1,6 +1,6 @@
 {
   "name": "easystatic",
-  "version": "0.1.9",
+  "version": "0.1.11",
   "description": "A simple static site generator that uses Markdown It for web pages, PostCSS and EJS for layout, Browsersync for cross-device testing..",
   "homepage": "https://easystatic.com",
   "author": "Konstantin Tarkus <hello@tarkus.me> (http://tarkus.me/)",
@@ -87,12 +87,11 @@
     "lint": "eslint src",
     "test": "eslint src",
     "start": "babel-node ./src/easystatic.js start docs",
-    "demo": "babel-node ./src/easystatic.js start demo",
-    "demo:build": "babel-node ./src/easystatic.js build demo",
-    "docs": "babel-node ./src/easystatic.js start docs",
-    "docs:build": "babel-node ./src/easystatic.js build docs",
-    "docs:deploy": "babel-node ./src/easystatic.js deploy docs --repo=easystatic/easystatic.github.io --domain=easystatic.com",
+    "start:demo": "babel-node ./src/easystatic.js start demo",
     "build": "rimraf lib && babel src --out-dir lib",
-    "prepublish": "rimraf lib && babel src --out-dir lib"
+    "build:docs": "babel-node ./src/easystatic.js build docs",
+    "build:demo": "babel-node ./src/easystatic.js build demo",
+    "prepublish": "rimraf lib && babel src --out-dir lib",
+    "publish:docs": "babel-node ./src/easystatic.js deploy docs --repo=easystatic/easystatic.github.io --domain=easystatic.com"
   }
 }

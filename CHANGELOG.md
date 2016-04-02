@@ -6,6 +6,10 @@ All notable changes to this project will be documented in this file.
 
 - Compile `main.js` file with [Babel](https://babeljs.io) and [Browserify](http://browserify.org/) (PLANNED)
 
+### [v0.1.11] - 2016-04-02
+
+- Use `GITHUB_TOKEN` environment variable when fetching repository stats from GitHub
+
 ### [v0.1.9] - 2016-03-24
 
 - Add `base` data variables to be used in EJS template(s). For example, when you run
@@ -68,7 +72,8 @@ All notable changes to this project will be documented in this file.
 - Add [CHANGELOG.md](CHANGELOG.md) file with notable changes to this project
 - Add [CONTRIBUTING.md](CONTRIBUTING.md) file with instructions on how to contribute to this project
 
-[unreleased]: https://github.com/easystatic/easystatic/compare/v0.1.9...HEAD
+[unreleased]: https://github.com/easystatic/easystatic/compare/v0.1.11...HEAD
+[v0.1.11]: https://github.com/easystatic/easystatic/compare/v0.1.9...v0.1.11
 [v0.1.9]: https://github.com/easystatic/easystatic/compare/v0.1.8...v0.1.9
 [v0.1.8]: https://github.com/easystatic/easystatic/compare/v0.1.7...v0.1.8
 [v0.1.7]: https://github.com/easystatic/easystatic/compare/v0.1.6...v0.1.7

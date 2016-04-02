@@ -92,6 +92,7 @@ async function info({ baseDir }) {
       port: 443,
       path: `/repos/${pkg.repository}`,
       method: 'GET',
+      auth: process.env.GITHUB_TOKEN ? `${process.env.GITHUB_TOKEN}:` : '',
       headers: { 'User-Agent': 'Easystatic' },
     }).then(data => {
       if (data) {
