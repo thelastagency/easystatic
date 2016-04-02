@@ -1,4 +1,4 @@
-## Easystatic - static site generator
+## Easystatic — a static site generator for GitHub projects
 
 > The easiest way to generate a static website for your project. It uses [Markdown It](https://markdown-it.github.io/)
 > for web pages, [EJS](http://ejs.co/) and [Postcss](http://postcss.org/) for site layout, [Browsersync](https://browsersync.io/)
