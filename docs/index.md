@@ -14,3 +14,14 @@ title: Easystatic site generator
    [Postcss](http://postcss.org/), [Browsersync](https://browsersync.io/)
 4. It contains a build-in development server with "live reload"
 5. It can scaffold the basic site layout for you
+
+### Backers
+
+♥ Easystatic? Help us keep it alive by [donating funds](https://www.patreon.com/tarkus) to cover project expenses!
+
+<a href="https://github.com/koistya" target="_blank">
+  <img src="https://github.com/koistya.png?size=64">
+</a>
+<a href="https://www.patreon.com/bePatron?patAmt=25&amp;u=2475816" target="_blank">
+  <img src="https://opencollective.com/static/images/become_backer.svg">
+</a>
