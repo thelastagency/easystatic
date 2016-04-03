@@ -15,7 +15,7 @@ import fs from './fs';
 
 const log = debug('easystatic:deploy');
 
-async function deploy({ baseDir, buildDir, assetsDir, repo, domain }) {
+async function deploy({ baseDir, buildDir, assetsDir, base, repo, domain }) {
   log(`deploy({
   baseDir: '${baseDir}',
   buildDir: '${buildDir}',
@@ -23,7 +23,7 @@ async function deploy({ baseDir, buildDir, assetsDir, repo, domain }) {
   repo: '${repo}',
   domain: '${domain}'
 })`);
-  await build({ baseDir, buildDir, assetsDir, production: true });
+  await build({ baseDir, buildDir, assetsDir, base, production: true });
 
   if (domain) {
     const cnameFile = path.resolve(baseDir, path.join(buildDir, './CNAME'));
