@@ -25,6 +25,7 @@ import postcssFilter from 'pleeease-filters';
 import postcssRem from 'pixrem';
 import postcssPseudoSelectors from 'postcss-pseudoelements';
 import postcssSelectorNot from 'postcss-selector-not';
+import postcssNested from 'postcss-nested';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 
@@ -43,6 +44,7 @@ const postcss = new Postcss([
   postcssRem,
   postcssPseudoSelectors,
   postcssSelectorNot,
+  postcssNested,
   autoprefixer,
   cssnano,
 ]);
