@@ -71,6 +71,7 @@
     "postcss-import": "^8.0.2",
     "postcss-pseudoelements": "^3.0.0",
     "postcss-selector-not": "^2.0.0",
+    "postcss-nested": "^1.0.1",
     "rimraf": "^2.5.2",
     "update-notifier": "^0.6.3"
   },
